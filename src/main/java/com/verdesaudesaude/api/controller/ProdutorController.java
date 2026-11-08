@@ -2,6 +2,7 @@ package com.verdesaudesaude.api.controller;
 
 import com.verdesaudesaude.api.entity.Produtor;
 import com.verdesaudesaude.api.service.ProdutorService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/produtores")
+@CrossOrigin(origins = "*")
 public class ProdutorController {
 
     private final ProdutorService produtorService;
@@ -29,7 +31,9 @@ public class ProdutorController {
     }
 
     @PostMapping
-    public ResponseEntity<Produtor> salvar(@RequestBody Produtor produtor) {
+    public ResponseEntity<Produtor> salvar(
+            @Valid @RequestBody Produtor produtor) {
+
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(produtorService.salvar(produtor));
     }
@@ -37,14 +41,20 @@ public class ProdutorController {
     @PutMapping("/{id}")
     public ResponseEntity<Produtor> atualizar(
             @PathVariable Long id,
-            @RequestBody Produtor produtor) {
+            @Valid @RequestBody Produtor produtor) {
 
-        return ResponseEntity.ok(produtorService.atualizar(id, produtor));
+        return ResponseEntity.ok(
+                produtorService.atualizar(id, produtor)
+        );
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> excluir(@PathVariable Long id) {
         produtorService.excluir(id);
         return ResponseEntity.noContent().build();
+    }
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<String> tratarCadastroDuplicado(IllegalArgumentException erro) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(erro.getMessage());
     }
 }
