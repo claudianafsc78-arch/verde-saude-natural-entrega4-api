@@ -1,85 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>4.0.8</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-	<groupId>com.verdesaudesaude</groupId>
-	<artifactId>verde-saude-natural-api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name/>
-	<description/>
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
-	<properties>
-		<java.version>21</java.version>
-	</properties>
-	<dependencies>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-crypto</artifactId>
-        </dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-h2console</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-validation</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-webmvc</artifactId>
-		</dependency>
+# 🌿 Verde & Saúde Natural — Implementação da API
 
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-validation-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-webmvc-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+## Sobre o projeto
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+API Back-End desenvolvida para o sistema Verde & Saúde Natural, uma plataforma de produtos naturais que permite gerenciar clientes, produtores, produtos e pedidos.
 
-</project>
+## Tecnologias utilizadas
+
+- Java 21
+- Spring Boot 4.0.8
+- Spring Web
+- Spring Data JPA
+- H2 Database
+- Maven
+
+## Tarefas implementadas
+
+| Código | Tarefa | Verificação |
+|---|---|---|
+| API-01 | Estrutura inicial da API | Inicialização do Spring Boot |
+| API-02 | Configuração do banco de dados | Conexão com H2 |
+| API-03 | Cadastro de clientes | Postman — POST e GET |
+| API-04 | Cadastro de produtores | Postman — POST e GET |
+| API-05 | Produtos orgânicos | Postman |
+| API-06 | Catálogo de produtos | Postman — consulta |
+| API-07 | Registro de pedidos | Postman — POST |
+| API-08 | Consulta e atualização de pedidos | Postman — GET e PUT |
+
+## Testes realizados
+
+- Testes de endpoints utilizando Postman.
+- Testes de cadastro e consulta de dados.
+- Testes de registro e atualização de pedidos.
+- Testes automatizados com resultado `BUILD SUCCESS`.
+
+## Links do projeto
+
+- **Trello:** https://trello.com/b/Ip4aYZSi
+- **Repositório UI:** https://github.com/claudianafsc78-arch/verde-saude-natural-entrega4-ui
+- **Repositório API:** https://github.com/claudianafsc78-arch/verde-saude-natural-entrega4-api
+
+---
+
+**Verde & Saúde Natural — Back-End (API)**
